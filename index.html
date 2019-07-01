@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="./assets/css/style.css" rel="stylesheet">
     <link href="./assets/css/reset.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -32,18 +32,36 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-
-                <input type="text">
-                <button type="submit">Add Search Term</button>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="new-search-term" placeholder="Enter a New Serch Term"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add New Search
+                            Term</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-1"></div>
         </div>
         <div class="row">
-            <div class="col-md-12" id="giphy_display"><!--Giphys will be pushed to this div--></div>
+            <div align="center" class="col-md-12">
+                <img style="height:25px;"
+                    src="./assets/images/Giphy Attribution Marks/Animated Logos/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif"
+                    alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="giphy_display">
+                <!--Giphys will be pushed to this div-->
+            </div>
         </div>
     </div>
+
+
+
+
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
