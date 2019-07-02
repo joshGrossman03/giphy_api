@@ -30,7 +30,7 @@ $(document.body).on("click", ".search-button", function () {
     var userQuery = $(this).attr("value");
     console.log(userQuery);
     var api_key = "&api_key=4qWHDFpLHp6KSbDG5lbHZ3jleSr5pAha";
-    var queryURL = "http://api.giphy.com/v1/gifs/search?limit=15&rating=g&q=" + userQuery + api_key;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?limit=15&rating=g&q=" + userQuery + api_key;
 
     $.ajax({
         url: queryURL,
