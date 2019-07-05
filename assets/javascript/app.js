@@ -1,3 +1,5 @@
+// global variables
+
 var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userQuery + api_key;
 var api_key = "&api_key=4qWHDFpLHp6KSbDG5lbHZ3jleSr5pAha";
 var userQuery;
@@ -9,7 +11,7 @@ var limitInput = parseInt($("select").val());
 
 
 renderButtons();
-
+// onclick function to add new 
 $("#button-addon2").click(function () {
     var newSearchTerm = $("input").val().trim();
     console.log(newSearchTerm);
@@ -23,7 +25,7 @@ function clearInput() {
     $("input").val("");
 }
 
-
+//onclick function for search button
 $(document.body).on("click", ".search-button", function () {
     
 
@@ -32,6 +34,7 @@ $(document.body).on("click", ".search-button", function () {
     var api_key = "&api_key=4qWHDFpLHp6KSbDG5lbHZ3jleSr5pAha";
     var queryURL = "https://api.giphy.com/v1/gifs/search?limit=15&rating=g&q=" + userQuery + api_key;
 
+//ajax call 
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,18 +43,20 @@ $(document.body).on("click", ".search-button", function () {
         
 
         //console.log(response);
-
+//for loop to extract values from JSON object and set them to variables
         for (var i = 0; i < 10; i++) {
             stillImageURL = response.data[i].images.downsized_still.url;
             animateImageURL = response.data[i].images.original.url;
             var rating = (response.data[i].rating).toUpperCase();
             //console.log(stillImageURL);
 
+// define variable to build giphy images
+
             var giphyImage = $("<img class='card-img-top giphy-image' style=height:150px;>");
             var cardBody = $("<div class='card-body'>");
             var cardText = $("<p class='card-text'>")
             var giphyImageCard = $("<div class='card'  style=width:200px;display:inline-grid;margin:5px;>");
-
+//build giphy images and push to DOM
             $(giphyImage).attr("data-still", stillImageURL);
             $(giphyImage).attr("data-animate", animateImageURL);
             $(giphyImage).attr("data-state", "still");
@@ -80,7 +85,7 @@ $(document.body).on("click", ".giphy-image", function () {
 });
 
 
-
+//render buttons for search terms
 function renderButtons() {
     $("#queryButtons").empty();
     for (var j = 0; j < topics.length; j++) {
@@ -91,11 +96,6 @@ function renderButtons() {
         $("#queryButtons").append(myButton);
 
     }
-}
-
-function instructionsToast(){
-
-
 }
 
 
